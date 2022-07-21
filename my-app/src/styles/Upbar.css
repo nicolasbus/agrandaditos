@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Shizuru&display=swap');
+
+.SupText{
+    background-color: rgb(223, 15, 15);
+}
+.Suptext{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 17px;
+    display: block;
+    left:50%;
+    margin:0;
+    align-items: center; 
+    display: flex;
+    justify-content: center; 
+}
+.Suptext2{
+    font-family: 'Lato', sans-serif;
+
+    color: white;
+    font-size: 12px;
+    display: block;
+    margin:0;
+    align-items: center; 
+    display: flex;
+    justify-content: center; 
+}

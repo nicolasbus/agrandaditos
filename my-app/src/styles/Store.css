@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=M+PLUS+Rounded+1c:wght@100&display=swap');
+
+*::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    margin:2rem;
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(14rem, 16rem));
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.card{
+    box-shadow: 0 0 0px 0px;
+    border-radius: radius;
+    min-width: 28rem;
+    display:flex
+}
+
+.card__image{
+    width: 14rem;
+    height: 11rem;
+    object-fit: cover;
+
+}
+
+.card__body{
+    margin:1rem;
+}
+.card__title{
+    line-height: 1.2rem;
+
+}
+.card__price{
+    font-size:1.4rem;
+    margin-top: 0.6rem;
+}
+.card__btn{
+    border:none;
+    border-top: 1px solid;
+    background-color: transparent;
+    font-size:1rem;
+    font-weight: bold;
+    color:inherit;
+    width:100%;
+    /* padding-top:1rem; */
+    /* margin-top:1rem; */
+}

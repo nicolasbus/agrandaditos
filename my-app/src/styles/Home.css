@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+.container{
+display:inline-block;
+text-align: center;
+align-items: center;
+padding: 5px;
+}
+.banner{
+    position: relative;
+    right:90px;
+    bottom:10px;
+    text-align: center;
+    align-items: center;
+    width: 1300px;
+    height:500px
+}
+.texto{
+    display: inline-block;
+    position:relative;
+    z-index: 100%;
+    bottom:380px;
+    text-align: center; 
+    align-items: center; 
+    color:white;
+    left:33.5%;
+}
+.text1{    
+    font-family: 'Lato', sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 50px;
+    align-items: center;
+}
+.subbaner{
+    display: flex;
+    position: center;
+    text-align: center; 
+    z-index: 100%;
+    font-family: 'Lato', sans-serif;
+
+}
+.Camion{
+    flex:1;  
+    position:relative; 
+    right:60px;
+    top:80px;
+
+
+}
+.camion{
+    width:131px;
+
+}
+.camtit{
+    font-size:23px;
+    position:relative;
+    top:5px
+
+}
+.camtext{
+    font-size:16px;
+    position:relative;
+    top:5px
+
+}
+
+.Etiqueta{
+flex:1;
+position:relative; 
+top:80px;
+}
+
+.etiqueta{
+    width:150px;
+}
+
+.etitit{
+    font-size:23px;
+    position:relative;
+    top:5px
+}
+
+.etitext{
+    font-size:16px;
+    position:relative;
+    top:5px
+}
+
+.candado{
+    width:150px;
+}
+
+.cantit{
+    font-size:23px;
+    position:relative;
+    top:5px
+}
+
+.cantext{
+    font-size:16px;
+    position:relative;
+    top:5px
+}
+
+.Candado{
+    flex:1;
+    position:relative;
+    left:60px;
+    top:80px;
+
+}
+
+
+
+
+/* }
+.nena{
+    width: 480px;
+    position:relative;
+    left:5%;
+}
+.nene{
+    width: 480px;
+    position:relative;
+    left:5%;
+
+}
+
+.ne{
+    position:relative;
+    left:63%;
+    z-index: 100;
+    font-family: 'Lato', sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 50px;
+    color:white
+
+    
+}
+.nen{
+    position:relative;
+    bottom:150px;
+}
+.na{    
+    position:relative;
+    left:21%;
+    z-index: 100;
+    font-family: 'Lato', sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 50px;
+    color:white
+}
+.nan{
+    position:relative;
+    bottom:120px;
+}
+.more{    
+    position:relative;
+    left:65%;
+} */
