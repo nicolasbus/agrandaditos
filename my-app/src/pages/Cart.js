@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import { userRequest } from "../requestMethods";
+const axios = require("axios");
 
 
 const Container = styled.div`
@@ -213,6 +214,7 @@ const Cart = () => {
   const cart = useSelector(state=>state.cart)
   // const cart = useSelector((state) => state.cart);
   const [quantity, setQuantity] = useState(1);
+  const [total, setTotal] = useState(cart.total);
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -244,8 +246,34 @@ const Cart = () => {
 //       price: cart.total
 //     });       
 //   } catch {}   
-// }
+// }    
+ 
+const handleClick =()=>{
+  const url = "http://localhost:3000/mercadopago/payment";
 
+  const body = 
+//       payer_email: "test_user_46945293@testuser.com",
+    {
+      title: "name",
+      description: "Dummy description",
+      picture_url: "img",
+      category_id: "category123",
+      quantity: parseInt(123),
+      unit_price: parseFloat(total)
+    }
+;
+
+const payment = axios.post(url, body, {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${"TEST-6173558116885974-050817-63983ffe9c3d8473d5023f9e61ccdcd6-26763240"}`
+  }
+})
+.catch((err)=>{console.log("err",err)})
+.then(response => {
+    console.log(response.data)
+})
+}
   return (
     <Container>
       <Wrapper>
@@ -310,7 +338,7 @@ const Cart = () => {
               <SummaryItemPrice>${cart.total}</SummaryItemPrice>
             </SummaryItem>
             <Button>COMPRAR AHORA!</Button>
-            <Button id="checkout" class="button-checkout" onClick="">Pagar</Button>
+            <Button id="checkout" class="button-checkout" onClick={()=>handleClick()}>Pagar</Button>
 
           </Summary>
         </Bottom>

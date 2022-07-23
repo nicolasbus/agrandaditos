@@ -4,13 +4,14 @@ class PaymentController {
     }
   
     async getPaymentLink(req, res) {
-        const { name, price, unit, img } = req.body; 
+        const { title, unit_price, quantity, picture_url } = req.body; 
       try {
+        console.log("comienzo invocacion: " + unit_price )
         const payment = await this.subscriptionService.createPayment(
-            name,
-            price,
-            unit,
-            img
+          title,
+            unit_price,
+            quantity,
+            picture_url
         );
   
         return res.json(payment);
