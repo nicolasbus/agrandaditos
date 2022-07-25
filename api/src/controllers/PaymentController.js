@@ -13,6 +13,13 @@ class PaymentController {
             quantity,
             picture_url
         );
+
+
+
+
+
+
+    
   
         return res.json(payment);
       } catch (error) {

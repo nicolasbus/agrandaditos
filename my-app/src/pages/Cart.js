@@ -1,9 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components"
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
-import { userRequest } from "../requestMethods";
+import {Link} from "react-router-dom";
+
 const axios = require("axios");
 
 
@@ -135,84 +136,9 @@ font-weight: 600;
 `;
 
 
-let productList = [];
-let carrito = [];
-let total = 0;
-
-// function add(productId, price) {
-//     console.log(productId, price);
-//     carrito.push(productId);
-//     total = total + price;
-//     document.getElementById("checkout").innerHTML = `Pagar $${total}`
-//     displayProducts();
-// }
-
-async function pay() {
-    try{
-        const preference = await (await fetch("/payment",{
-            method: "post",
-            body: JSON.stringify(carrito),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })).json();
-
-
-        var script = document.createElement("script");
-  
-        // The source domain must be completed according to the site for which you are integrating.
-        // For example: for Argentina ".com.ar" or for Brazil ".com.br".
-        script.src = "https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
-        script.type = "text/javascript";
-        script.dataset.preferenceId = preference.preferenceId;
-        document.getElementById("page-content").innerHTML = "";
-        document.querySelector("#page-content").appendChild(script);
-
-    }
-    catch {
-        window.alert("Sin stock");
-    }
-
-    carrito = [];
-    total = 0;
-    //await fetchProducts();
-    document.getElementById("checkout").innerHTML = `Pagar $${total}`
-}
-
-//-----
-function displayProducts() {
-    let productsHTML = '';
-    productList.forEach(p => {
-        let buttonHTML = `<button class="button-add" onclick="add(${p.id}, ${p.price})">Agregar</button>`;
-
-        if (p.stock <= 0) {
-            buttonHTML = `<button disabled class="button-add disabled" onclick="add(${p.id}, ${p.price})">Sin stock</button>`;
-        }
-
-        productsHTML +=
-        `<div class="product-container">
-            <h3>${p.title}</h3>
-            <img src="${p.img}" />
-            <h1>$${p.price}</h1>
-            ${buttonHTML}
-        </div>`
-    });
-    document.getElementById('page-content').innerHTML = productsHTML;
-}
-
-async function fetchProducts(){
-    productList = await (await fetch("/products")).json();
-    displayProducts();
-}
-
-window.onload = async() => {
-    await fetchProducts();
-}
-
 
 const Cart = () => {
   const cart = useSelector(state=>state.cart)
-  // const cart = useSelector((state) => state.cart);
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(cart.total);
 
@@ -224,29 +150,6 @@ const Cart = () => {
     }
   };
 
-//   useEffect(() => {
-//     const MakeRequest = async () => {
-//       try {
-//         await userRequest.post("/mercadopago/payment", {
-//           name: "blabla",
-//           unit:1,
-//           price: cart.total
-//         });       
-//       } catch {}    };
-//       MakeRequest();
-//     }, []);
-// //userRequest.map
-
-// async function handleClick (){
-//   try {
-//     await userRequest.post("/mercadopago/payment", 
-//     {
-//       name: "blabla",
-//       unit:1,
-//       price: cart.total
-//     });       
-//   } catch {}   
-// }    
  
 const handleClick =()=>{
   const url = "http://localhost:3000/mercadopago/payment";
@@ -254,11 +157,11 @@ const handleClick =()=>{
   const body = 
 //       payer_email: "test_user_46945293@testuser.com",
     {
-      title: "name",
-      description: "Dummy description",
+      title: "Agrandaditos",
+      description: "Indumentaria infantil",
       picture_url: "img",
-      category_id: "category123",
-      quantity: parseInt(123),
+      category_id: "chicos",
+      quantity: parseInt(1),
       unit_price: parseFloat(total)
     }
 ;
@@ -274,6 +177,8 @@ const payment = axios.post(url, body, {
     console.log(response.data)
 })
 }
+  
+ const envio = total
   return (
     <Container>
       <Wrapper>
@@ -326,19 +231,15 @@ const payment = axios.post(url, body, {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$300</SummaryItemPrice>
+              <SummaryItemText>Envio</SummaryItemText>
+              <SummaryItemPrice>{envio > 7000 ? <p>0</p> : <p>500</p>}</SummaryItemPrice>
             </SummaryItem>           
-            <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$300</SummaryItemPrice>
-            </SummaryItem>
             <SummaryItem>
               <SummaryItemText type="total">Total</SummaryItemText>
               <SummaryItemPrice>${cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <Button>COMPRAR AHORA!</Button>
-            <Button id="checkout" class="button-checkout" onClick={()=>handleClick()}>Pagar</Button>
+            <Link to="/checkout"><Button>CONTINUAR</Button></Link>
+            <Button id="checkout" class="button-checkout" onClick={()=>handleClick()}>COMPLETAR COMPRA</Button>
 
           </Summary>
         </Bottom>

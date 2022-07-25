@@ -13,7 +13,7 @@ dotenv.config();
 app.set('port',process.env.PORT || 3000);
 app.use(bodyParser.json());
 
-
+const whiteList = ['http://localhost:3001']
 MongoDB();
 //Middlewares
 // app.use(morgan());
@@ -23,7 +23,7 @@ app.use('/users',require('./Routes/users'));
 app.use('/cart',require('./Routes/cart')) ;
 app.use('/orders',require('./Routes/order'));
 app.use('/mercadopago',require('./Routes/mercadopago'));
-app.use(cors());
+app.use(cors({origin: whiteList}));
 app.use(express.urlencoded({ extended: false }));
 
 //Server
