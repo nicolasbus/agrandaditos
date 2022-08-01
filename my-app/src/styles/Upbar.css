@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Shizuru&display=swap');
 
 .SupText{
-    background-color: rgb(223, 15, 15);
-}
+    background: #69d03a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2d991a, #69d03a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2d991a, #69d03a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 .Suptext{
     font-family: 'Lato', sans-serif;
     color: white;
-    font-size: 17px;
+    font-size: 12px;
     display: block;
     left:50%;
     margin:0;
@@ -18,7 +20,7 @@
     font-family: 'Lato', sans-serif;
 
     color: white;
-    font-size: 12px;
+    font-size: 9px;
     display: block;
     margin:0;
     align-items: center; 
