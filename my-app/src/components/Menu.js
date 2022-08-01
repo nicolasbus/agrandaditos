@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
-height: 60px;
+height: 90px;
 background:white;
-
+z-index:100;
 `;
 
 const Wrapper = styled.div`
@@ -26,7 +26,7 @@ flex:1;
 
 const Logo = styled.img`
 cursor:pointer;
-width: 300px;
+width: 210px;
 `;
 
 const Center = styled.div`
@@ -75,7 +75,8 @@ const quantity = useSelector(state=>state.cart.quantity)
     <Container>
         <Wrapper>
             <Left>
-            <Link to="/"><Logo src="https://i.ibb.co/3rykGFX/LogoAG.png" /></Link>
+            {/* <Link to="/"><Logo src="https://i.ibb.co/3rykGFX/LogoAG.png" /></Link> */}
+            <Link to="/"><Logo src="https://i.ibb.co/9svYwmC/Photo-Room-20220801-104426.jpg" /></Link>
             </Left>
             <Center></Center>
             <Right>
