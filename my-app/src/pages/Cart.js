@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
+// import Modal from './Modal';
+
 
 const axios = require("axios");
 
@@ -135,6 +137,44 @@ color:white;
 font-weight: 600;
 `;
 
+//MODAL
+const ContainerModal = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display:flex;
+`;
+const WrapperModal = styled.div`
+max-width: 800px;
+max-height: 700px;
+position: fixed;
+bottom:30%;
+left: 30%;
+box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+border-radius: 8px;
+background-color:white;
+`;
+const ModalRight = styled.div`
+width: 100%;
+display:flex;
+`;
+const CloseBtn = styled.p`
+position: fixed;
+top: 8px;
+right: 8px;
+cursor: pointer;
+`;
+const Content = styled.div`
+flex:1;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+// margin-top: 0rem;
+padding: 15px;
+`
+const TitleModal = styled.h2`
+font-size:25px;
+`
 
 
 const Cart = () => {
@@ -187,6 +227,67 @@ const payment = axios.post(url, body, {
  const shipping = 500
  const summary = total>10000 ? 0 : shipping 
  const toPay = total + summary
+
+ ///////////////////////////////////////////
+////MODAL
+const [openModal, setOpenModal] = useState(false);
+const Modal = ({open, onClose}) => {
+  
+
+  if (!open) return null;
+
+  return (
+  <ContainerModal ModalonClick={onClose}>
+      <WrapperModal onClick={(e) => { e.stopPropagation(); }}>
+          <ModalRight>
+          <CloseBtn onClick={onClose}>X</CloseBtn>
+
+          <Content>
+          <TitleModal>Tus datos</TitleModal>
+              <p>Nombre completo</p>
+              <input/>
+              <p>Telefono</p>
+              <input/>
+              <p>Direccion</p>
+              <input/>
+              <p>Ciudad</p>
+              <input/>
+              <p>Provincia</p>
+              <input value="Tierra del Fuego"/>
+          </Content>
+          <Content>
+              <TitleModal>Es para regalar?</TitleModal>
+              <input type='checkbox'/>
+              <h4>Datos de la persona que va a recibir</h4>
+              <p>Nombre completo</p>
+              <input/>
+              <p>Telefono</p>
+              <input/>
+              <p>Direccion</p>
+              <input/>
+              <p>Ciudad</p>
+              <input/>
+              <p>Provincia</p>
+              <input value="Tierra del Fuego"/>
+          </Content>
+          <Content className='btnContainer'>
+
+
+          <h2>Total a pagar:{toPay}</h2>
+
+              <Button className='btnPrimary' onClick={()=>handleClick()}>Pagar</Button>
+              <br/>
+              <Button className='btnPrimary' onClick={onClose}>Cancelar</Button>
+
+          </Content>
+          </ModalRight>
+      </WrapperModal>
+  </ContainerModal>
+)
+}
+
+
+//////////////////////////////////////////
 
   return (
     <Container>
@@ -247,8 +348,13 @@ const payment = axios.post(url, body, {
               <SummaryItemText type="total">Total</SummaryItemText>
               <SummaryItemPrice>${toPay}</SummaryItemPrice>
             </SummaryItem>
-            <Link to="/checkout"><Button>CONTINUAR</Button></Link>
-            <Button id="checkout" className="button-checkout" onClick={()=>handleClick()}>PAGAR</Button>
+            {/* <Button id="checkout" className="button-checkout" onClick={()=>handleClick()}>PAGAR</Button> */}
+
+//////////////////
+                 <Button onClick={()=> setOpenModal(true)}>COMPLETAR COMPRA</Button>
+                  <Modal open={openModal} onClose={() => setOpenModal(false)} />
+
+////////////////
 
           </Summary>
         </Bottom>

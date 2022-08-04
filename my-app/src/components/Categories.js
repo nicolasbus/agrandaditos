@@ -6,12 +6,17 @@ import CategoryItem from './CategoryItem'
 const Container = styled.div`
 display:flex;
 align-items:center;
-margin:30px;`;
+margin:0px;
+position:relative;
+bottom:240px;
+
+`;
+
 const Categories = () => {
   return (
     <Container>
-        {categories.map(item=>(
-            <CategoryItem item={item}/>))}
+        {categories.map((item,index)=>
+            <CategoryItem item={item} key={index} />)}
     </Container>
   )
 }

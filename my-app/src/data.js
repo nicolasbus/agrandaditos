@@ -2,21 +2,21 @@
 export const sliderItems = [
     {
         id:1,
-        img: "https://i.ibb.co/PZhHxDp/babys.jpg",
+        img: "https://i.ibb.co/2WFz0F2/IMG-6092.jpg",
         title: "BEBES",
         desc: "20% OFF!",
         bg: "f5fafd",
     },
     {
         id:2,
-        img: "https://i.ibb.co/zZyf4sL/girls.jpg",
+        img: "https://i.ibb.co/Qd2xSHB/IMG-6093.jpg",
         title: "NIÑAS",
         desc: "20% OFF!",
         bg: "f5fafd",
     },    
     {
         id:3,
-        img: "https://i.ibb.co/vY02HGD/boys.jpg",
+        img: "https://i.ibb.co/s25xVYb/IMG-6091.jpg",
         title: "NIÑOS",
         desc: "20% OFF!",
         bg: "f5fafd",
@@ -25,20 +25,20 @@ export const sliderItems = [
 export const categories = [
 {
     id:1,
-    img: "https://i.ibb.co/PZhHxDp/babys.jpg",
+    img: "https://i.ibb.co/2WFz0F2/IMG-6092.jpg",
     title: "BEBES",
     category: "bebe"
 },
 {
     id:2,
-    img: "https://i.ibb.co/zZyf4sL/girls.jpg",
+    img: "https://i.ibb.co/Qd2xSHB/IMG-6093.jpg",
     title: "NIÑAS",
     desc: "20% OFF!",
     category: "nena"
 },    
 {
     id:3,
-    img: "https://i.ibb.co/vY02HGD/boys.jpg",
+    img: "https://i.ibb.co/s25xVYb/IMG-6091.jpg",
     title: "NIÑOS",
     desc: "20% OFF!",
     category: "nene"

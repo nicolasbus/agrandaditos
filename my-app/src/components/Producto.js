@@ -9,7 +9,7 @@ const Info = styled.div`
   opacity: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 3;
@@ -22,7 +22,7 @@ const Info = styled.div`
 
 const Container = styled.div`
   flex: 1;
-  margin: 5px;
+  margin: 0px;
   min-width: 280px;
   height: 350px;
   display: flex;
@@ -35,21 +35,19 @@ const Container = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  position: absolute;
+margin:50%
 `;
 
 const Image = styled.img`
   height: auto;
   width:250px;
   z-index: 2;
+  
 `;
 
 const Icon = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   color:red;
   background-color: white;
@@ -67,15 +65,15 @@ const Icon = styled.div`
 `;
 const P = styled.div`
 display: flex;
-position: absolute;
-// align-items: center;
+position: relative;
+align-items: center;
 
-// justify-content: center;
+justify-content: center;
 
 // right:150px;
-top:290px;
-z-index:100;
-font-weight: bold;
+// top:290px;
+// z-index:100;
+// font-weight: bold;
   
 `
 ;
@@ -100,7 +98,7 @@ function Producto (props) {
            </Icon>
            <Icon>
            <Link to={'/productos/'+item.
-           _id}>
+           _id+'/'}>
           <FontAwesomeIcon icon={faBagShopping} /> 
           </Link>
           </Icon>

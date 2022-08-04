@@ -5,10 +5,15 @@ import axios from "axios";
 
 
 const Container = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
+//   padding: 20px;
+//   display: flex;
+//   flex-wrap: wrap;
   justify-content: space-between;
+display:flex;
+align-items:center;
+margin:0px;
+position:relative;
+bottom:240px;
 `;
   
 const Store=()=>{

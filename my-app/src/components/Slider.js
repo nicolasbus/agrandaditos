@@ -4,8 +4,8 @@ import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutl
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 1255px;
-  height: 100%;
+  width: 1850px;
+  height: 700px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -79,9 +79,9 @@ const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
   &:hover{
-     background-color: #69d03a;
-     color:black;
-     border:2px solid black;
+    background-color: #1DA652;
+    color:#EEEEEE;
+    border:2px solid #f0f0f0;
 }
 `;
 

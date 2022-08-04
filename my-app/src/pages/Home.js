@@ -2,7 +2,6 @@ import '../styles/Home.css';
 import Store from './Store';
 import Categories from '../components/Categories';
 import Slider from '../components/Slider';
-import BuyerInfo from './BuyerInfo';
 import ButtonMenu from '../components/ButtonMenu'
 
 const Home =()=>{
@@ -13,7 +12,6 @@ const Home =()=>{
                <Categories/>
                <Store/>
 
-      {/* <BuyerInfo/> */}
         </div>
 
     )

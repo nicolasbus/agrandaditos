@@ -2,8 +2,8 @@
 
 .SupText{
     background: #69d03a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2d991a, #69d03a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2d991a, #69d03a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #188743, #69d03a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #188743, #69d03a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 .Suptext{
     font-family: 'Lato', sans-serif;

@@ -120,9 +120,9 @@ font-weight:500;
 margin:5px;
 
  &:hover{
-  background-color: #69d03a;
-     color:black;
-     border:2px solid black;
+  background-color: #1DA652;
+  color:#fff;
+  border:2px solid #f0f0f0;
 }
 `;
 
