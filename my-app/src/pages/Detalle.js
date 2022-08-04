@@ -120,9 +120,9 @@ font-weight:500;
 margin:5px;
 
  &:hover{
-     background-color: rgb(223, 15, 15);
-     color:white;
-     border:2px solid white;
+  background-color: #69d03a;
+     color:black;
+     border:2px solid black;
 }
 `;
 
@@ -175,15 +175,15 @@ const Detalle = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {product.color?.map((c) => (
-                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              {product.color?.map((c, index) => (
+                <FilterColor color={c} key={index} onClick={() => setColor(c)} />
               ))}
             </Filter>
             <Filter>
               <FilterTitle>Talle</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
-                {product.size?.map((s) => (
-                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                {product.size?.map((s, index) => (
+                  <FilterSizeOption key={index}>{s}</FilterSizeOption>
                 ))}
               </FilterSize>
             </Filter>

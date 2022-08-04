@@ -3,6 +3,7 @@ import Producto from '../components/Producto';
 import styled from "styled-components";
 import axios from "axios";
 
+
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -21,7 +22,7 @@ const Store=()=>{
     })
     return(
         <Container>
-        {products.map((item) => <Producto item={item} key={item._id}/>)}
+        {products.map((item, index) => <Producto item={item} key={index}/>)}
         </Container>
     )}
   

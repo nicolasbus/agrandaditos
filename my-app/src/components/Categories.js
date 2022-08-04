@@ -4,8 +4,9 @@ import { categories } from '../data';
 import CategoryItem from './CategoryItem'
 
 const Container = styled.div`
- display:flex;
-`;
+display:flex;
+align-items:center;
+margin:30px;`;
 const Categories = () => {
   return (
     <Container>

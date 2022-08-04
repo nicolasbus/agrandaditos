@@ -162,7 +162,7 @@ const handleClick =()=>{
       picture_url: "img",
       category_id: "chicos",
       quantity: parseInt(1),
-      unit_price: parseFloat(total)
+      unit_price: parseFloat(toPay)
     }
 ;
 
@@ -173,12 +173,21 @@ const payment = axios.post(url, body, {
   }
 })
 .catch((err)=>{console.log("err",err)})
-.then(response => {
+.then(response => { 
+  if(response.data){
+    // response.data.init_point
+    window.open(response.data.init_point, '_blank');
     console.log(response.data)
+    console.log(response.data.init_point)
+
+  }
 })
 }
   
- const envio = total
+ const shipping = 500
+ const summary = total>10000 ? 0 : shipping 
+ const toPay = total + summary
+
   return (
     <Container>
       <Wrapper>
@@ -193,8 +202,8 @@ const payment = axios.post(url, body, {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map((products)=>(
-            <Product>
+            {cart.products.map((products,index)=>(
+            <Product key={index}>
               <ProductDetail>
                 <Image src={products.img} />
                 <Details>
@@ -232,14 +241,14 @@ const payment = axios.post(url, body, {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Envio</SummaryItemText>
-              <SummaryItemPrice>{envio > 7000 ? <p>0</p> : <p>500</p>}</SummaryItemPrice>
+              <SummaryItemPrice>${summary}</SummaryItemPrice>
             </SummaryItem>           
             <SummaryItem>
               <SummaryItemText type="total">Total</SummaryItemText>
-              <SummaryItemPrice>${cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>${toPay}</SummaryItemPrice>
             </SummaryItem>
             <Link to="/checkout"><Button>CONTINUAR</Button></Link>
-            <Button id="checkout" class="button-checkout" onClick={()=>handleClick()}>COMPLETAR COMPRA</Button>
+            <Button id="checkout" className="button-checkout" onClick={()=>handleClick()}>PAGAR</Button>
 
           </Summary>
         </Bottom>

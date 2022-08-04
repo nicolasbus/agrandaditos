@@ -3,34 +3,28 @@ import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 const Container = styled.div`
-  // display:flex;
-  // flex: 1;
-  padding: 5px;
-  margin: 0px;
-  height: 70vh;
-  position: relative;
-  right:70px;
-  top:20px;
-  flex-wrap:wrap;
+  flex: 1;
+  margin:20px;
+
 `;
 const Image = styled.img`
-flex:1;
-width:400px;
+width:350px;
 height:100%;
-objet-fit:cover;
-// position:relative;
-// right:150px;
+align-items:center;
+object-fit:cover;
 border-radius:10px;
 text-align: center;
 `;
 
 const Info = styled.div`
   position: absolute;
-  top: 150px;
-  left: 0;
+  top: 1200px;
+  /* left: 0;
   width: 100%;
-  height: 100%;
-  display: flex;
+  height: 100%; */
+  /* display: flex; */
+  flex:1;
+  margin:90px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -52,7 +46,7 @@ const Button = styled.button`
 
     &:hover {
       background-color: white;
-      color: rgb(223, 15, 15);
+      color: rgb(223, 15, 15);}
 `;
 
 
