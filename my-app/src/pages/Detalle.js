@@ -182,13 +182,13 @@ const Detalle = () => {
             <Filter>
               <FilterTitle>Talle</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
+              <FilterSizeOption selected></FilterSizeOption>
                 {product.size?.map((s, index) => (
                   <FilterSizeOption key={index}>{s}</FilterSizeOption>
                 ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
-          <b>* No olvide seleccionar color y talle por favor.</b>
           <br/>
           <br/>
           <AddContainer>

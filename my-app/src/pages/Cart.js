@@ -250,8 +250,13 @@ const Modal = ({open, onClose}) => {
               <input/>
               <p>Direccion</p>
               <input/>
-              <p>Ciudad</p>
-              <input/>
+              Ciudad
+              <br/>
+              <select>
+                <option selected value='1'>Rio Grande</option>
+                <option value='2'>Tolhuin</option>
+                <option value='3'>Ushuaia</option>
+              </select>
               <p>Provincia</p>
               <input value="Tierra del Fuego"/>
           </Content>
@@ -266,14 +271,18 @@ const Modal = ({open, onClose}) => {
               <p>Direccion</p>
               <input/>
               <p>Ciudad</p>
-              <input/>
+              <select>
+                <option selected value='1'>Rio Grande</option>
+                <option value='2'>Tolhuin</option>
+                <option value='3'>Ushuaia</option>
+              </select>
               <p>Provincia</p>
               <input value="Tierra del Fuego"/>
           </Content>
           <Content className='btnContainer'>
 
 
-          <h2>Total a pagar:{toPay}</h2>
+          <h2>Total a pagar: ${toPay}</h2>
 
               <Button className='btnPrimary' onClick={()=>handleClick()}>Pagar</Button>
               <br/>

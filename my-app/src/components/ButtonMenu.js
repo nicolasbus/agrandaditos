@@ -25,8 +25,10 @@ background-color: transparent;
 cursor: pointer;
 border-radius:50px;
 &:hover{
-background-color: #EEEDED;
-border:2px solid #grey;
+background-color: #Eff11;
+
+border:1px solid #grey;
+font-size: 20.2px;
 }
 `;
 

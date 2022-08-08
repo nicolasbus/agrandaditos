@@ -40,7 +40,7 @@ router.get("/", async (req, res) => {
   //
 
 
-
+//GET ONE
 router.get("/:id", async function (req, res) {
     try{  
         const document = await Product.findById(req.params.id)
@@ -50,6 +50,7 @@ router.get("/:id", async function (req, res) {
     }
 })
 
+//NEW PRODUCT
 router.post('/add', async function (req, res) {
     try{   const newProduct = new Product({
         title: req.body.title,
@@ -68,6 +69,7 @@ router.post('/add', async function (req, res) {
     }
 })
 
+//UPDATE PRODUCT
 router.put("/:id", async function (req, res) {
     try{  
         const document = await Product.updateOne({_id:req.params.id}, req.body)
@@ -77,6 +79,37 @@ router.put("/:id", async function (req, res) {
     }
 })
 
+///ADD PRODUCT
+router.route("/add/:id").put(function(req, res) {
+  document = Product.updateOne(
+    { _id:req.params.id},
+    { $push:  req.body  },
+    function(err, document) {
+      if (err){ 
+        res.json(err);
+      } else {
+        res.json(document);
+      }
+    }
+  );
+});
+
+//DISCOUNT PRODUCT
+router.route("/discount/:id").put(function(req, res) {
+  document = Product.updateOne(
+    { _id:req.params.id},
+    { $pull: req.body  },
+    function(err, document) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(document);
+      }
+    }
+  );
+});
+
+//DELETE PRODUCT
 router.delete("/:id", async function (req, res) {
     try{  
         const document = await Product.deleteOne({_id:req.params.id})

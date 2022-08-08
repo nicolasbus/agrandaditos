@@ -49,7 +49,7 @@ const Ubicacion =()=>{
             <a href="https://www.google.com/maps/dir//Viedma+688,+R%C3%ADo+Grande,+Tierra+del+Fuego/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0xbc4b163e856c5965:0x9427ae69f79ed35c!3e0?sa=X&ved=2ahUKEwjAj53skqz5AhXuvJUCHTU4CoMQox16BAgDEBI"><Info> Viedma 688, Rio Grande, Tierra del Fuego</Info>
 </a>
 <Info>  Tel: 02964-420915 <br />
-                 WhatsApp: 02964-419063
+                 WhatsApp: <a href="https://wa.me/5492964419063">2964-419063</a>
                 </Info>
             </Text>
                 <Img className="Img" src="https://i.ibb.co/8NJYqFQ/IMG-4928.jpg"/>

@@ -78,12 +78,21 @@ const Button = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  border-radius:5px;
+
   &:hover{
+    border:2px solid white;
+    font-size: 20.5px;
     background-color: #1DA652;
-    color:#EEEEEE;
-    border:2px solid #f0f0f0;
+    color :white
+
 }
+
 `;
+
+// background-color: #1DA652;
+// color:#EEEEEE;
+// border:2px solid #f0f0f0;
 
 ////////////////////////////////////
 

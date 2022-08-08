@@ -17,6 +17,9 @@ import {
 import Ubicacion from './pages/Ubicacion';
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
+import Success from './pages/payment/Success';
+import Pending from './pages/payment/Pending';
+import Failure from './pages/payment/Failure';
 const App =()=>{
   // const user = true
   return(
@@ -37,6 +40,9 @@ const App =()=>{
         <Route path="/productos/modificar/:id" element={<ModProduct />} />
         <Route path="/ubicacion" element={<Ubicacion />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/success" element={<Success/>} />
+        <Route path="/pending" element={<Pending />} />
+        <Route path="/failure" element={<Failure />} />
 
 
 
