@@ -72,7 +72,7 @@ router.post('/add', async function (req, res) {
 //UPDATE PRODUCT
 router.put("/:id", async function (req, res) {
     try{  
-        const document = await Product.updateOne({_id:req.params.id}, req.body)
+        const document = await Product.updateMany({_id:req.params.id}, req.body)
         res.json(document)
     }catch(err){
         console.log(err)
@@ -128,4 +128,27 @@ router.post('/productdata',(req,res)=>{
     res.send(err)
   }})
 })
+
+// //UPDATE USER NEW
+// router.post('/update',(req,res)=>{
+//   Product.findOneAndUpdate({_id:req.params._id},{
+//     title: req.body.title,
+//     brand: req.body.brand,
+//     price: req.body.price,
+//     color: req.body.color,
+//     size: req.body.size,
+//     categories: req.body.categories,
+//     img: req.body.img,
+//     inStock: req.body.inStock
+//   },(err)=>{
+//     if(!err){
+//       res.json("successfull")
+//     }else{
+//       res.send(err)
+//     }
+//   }
+//   )
+// })
+
+
 module.exports = router;

@@ -1,6 +1,14 @@
 import React, {useEffect,useState} from 'react'
 import axios from 'axios'
 import Product from '../../components/Product'
+import styled from "styled-components";
+
+const Container = styled.div`
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
 
 const Inventory = () => {
     const [product,setProduct] = useState([])
@@ -23,13 +31,13 @@ const Inventory = () => {
             </div>
         )
     })
-  return (
-    <div>
-        {productList}
-        <div>
 
-              </div>
-    </div>
+
+  return (
+    <Container>
+        {productList}
+
+    </Container>
   )
 }
 
