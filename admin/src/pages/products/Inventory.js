@@ -9,22 +9,26 @@ const Inventory = () => {
         axios.get('http://localhost:3000/products')
         .then(res =>{
             console.log(res.data)
+            setProduct(res.data)
         })
         .catch(err=>{
             console.log(err)
         })
     },[])
 
-    const productList = product.map(products => {
+    const productList = product.map((products,index) => {
         return(
             <div>
-                <Product products={products}/>
+                <Product products={products} key={index} />
             </div>
         )
     })
   return (
     <div>
-        <productList/>
+        {productList}
+        <div>
+
+              </div>
     </div>
   )
 }

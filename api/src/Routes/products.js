@@ -118,4 +118,14 @@ router.delete("/:id", async function (req, res) {
         console.log(err)
     }
 })
+
+//GET PRODUCT DATA
+router.post('/productdata',(req,res)=>{
+  Product.find({_id:req.body._id}, function(docs,err)
+ { if(!err){
+    res.send(docs)
+  }else{
+    res.send(err)
+  }})
+})
 module.exports = router;

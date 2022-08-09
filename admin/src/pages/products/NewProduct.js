@@ -7,7 +7,7 @@ const NewProduct = () => {
     const [price, setPrice] = useState('');
     const [color, setColor] = useState('');
     const [size, setSize] = useState('');
-    const [category, setCategory] = useState('');
+    const [categories, setCategories] = useState('');
     const [img, setImg] = useState('');
 
 
@@ -20,7 +20,7 @@ const NewProduct = () => {
             price: price,
             color: color.split(','),
             size: size.split(','),
-            category: category.split(','),
+            categories: categories.split(','),
             img: img
           }
 
@@ -49,7 +49,7 @@ const NewProduct = () => {
             <label>Talle</label>
             <input type="array" value={size} onChange={(e)=>{setSize(e.target.value)}}/>
             <label>Categoria</label>
-            <input type="text" value={category} onChange={(e)=>{setCategory(e.target.value)}}/>
+            <input type="text" value={categories} onChange={(e)=>{setCategories(e.target.value)}}/>
             <label>Imagen</label>
             <input type="text" value={img} onChange={(e)=>{setImg(e.target.value)}}/>
 
