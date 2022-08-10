@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 
 // const Container = styled.div`
@@ -11,38 +11,71 @@ import styled from 'styled-components'
 // `;
 // const Description = styled.div`
 // `;
+
+
 const DailySales = () => {
+
+  let [descripcionValue, setDescripcionValue] = useState("")
+  let [totalValue, setTotalValue] = useState("")
+  let [paymentValue, setPaymentValue] = useState("")
+  let [saleValue, setSaleValue] = useState("")
+
+//ARRAY DESCRIPCION VALUE
+  const descripcionInput= [descripcionValue, saleValue]
+
+//OBJETO DESCRIPCION
+  const descripcion =
+    { 
+    descripcion: descripcionInput,
+    venta: totalValue, 
+    pago: paymentValue
+  }
+  console.log(descripcion)
+
+//////////////////////////
+
+  
   return (
     <div>
       <form>
         <h1>Venta diaria</h1>
         <label>Fecha </label>
         <input type='date'/>
+
+
+
+
+
+
+        <div> 
         <div>
-
         <label>Descripcion</label>
-        <input type='text'/>
+        <input type='text' onChange={(event) => setDescripcionValue(event.target.value)}/>
+        <input type='number' onChange={(event) => setSaleValue(event.target.value)}/>
+        <button>Agregar</button>
+        </div><br/>
+        <label>Venta</label>
+        <input type='number' onChange={(event) => setTotalValue(event.target.value)}/>
 
-        <label>Total</label>
-        <input type='number'/>
-
-        <label>Medio de pago</label>
-        <input type='checkbox'/>
-        <input type='checkbox'/>
-        <input type='checkbox'/>
+        <h4>Medio de pago</h4>
+        <label>Efectivo</label>
+        <input type='checkbox' value="Efectivo" onChange={(event) => setPaymentValue(event.target.value)}/>
+        <label>Tarjeta</label>
+        <input type='checkbox' value="Tarjeta" onChange={(event) => setPaymentValue(event.target.value)}/>
+        <label>Transferencia</label>
+        <input type='checkbox' value="Transferencia" onChange={(event) => setPaymentValue(event.target.value)}/>
         <button>Agregar</button>
         </div>
-        <p>CAMPERA              $9900  Tarjeta</p>
-        <p>BUZO                 $5900  Tarjeta</p>
-        <p>CAMPERA              $9900  Tarjeta</p>
-        <p>REMERA               $2700  Tarjeta</p>
-        <p>CAMPERA              $9900  Tarjeta</p>
 
+
+
+
+{/* 
         <p>Efectivo</p>
         <p>Tarjeta</p>
         <p>Transferencia</p>
-        <p>Total</p>
-
+        <p>Total</p> */}
+<br/><br/>
       <label>Caja</label>
       <input type="number"/>
       </form>
@@ -54,6 +87,18 @@ const DailySales = () => {
 }
 
 export default DailySales
+
+
+/*
+{
+  fecha: {input.fecha}
+  ventas: [[input.descripcion, input.total, input.mediodepago],[descripcion, total, mediodepago],[descripcion, total, mediodepago]]
+  total: input.total
+  caja: input.caja
+}
+
+*/
+
 
 
 // var myArray = ['two','one', 'two', 'three','two','two'];

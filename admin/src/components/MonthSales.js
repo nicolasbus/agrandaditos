@@ -7,63 +7,111 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-box-sizing: border-box;
-width: 1000px;
+font-family: Roboto, sans-serif;
+margin: 0px;
+padding:0px;
+align-items: center;
+justify-items: center;
+display:flex;
+`;
+const Wrapper = styled.div`
+flex:1;
+border-radius: 4px;
+box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+max-width: 250px;
 display: flex;
-padding: 3rem;
+border-radius: 25px;
+margin: 15px;
+
+// position: relative;
+`;
+const H2 = styled.h2`
+
+`;
+const Number = styled.div`
+`;
+const Date = styled.h2`
+`;
+const Description = styled.div`
+display: grid;
+grid-template-columns: 2fr 2fr;
+`;
+const Text = styled.p`
+font-size: 12px;
 `;
 
 const MonthSales = () => {
   return (
+    <div>                
+    <H2>Agosto</H2>
     <Container>
-        <h1>MAYO</h1>
+
+        <Wrapper>
     <div>
-        <div>
-            <h2>1</h2>
-        </div>
-        <div>
-            <p>Efectivo: $20.000</p>
-            <p>Tarjeta: $70.000</p>
-            <p>Transferencia: $10.000</p>
-        </div>
+        <Number>
+            <Date>1</Date>
+        </Number>
+        <Description>
+            <Text>Efectivo: $20.000
+            Tarjeta: $70.000
+            Transferencia: $10.000</Text>
+        </Description>
         <div>
             <h2>Total: $100.000</h2>
         </div>
-    </div>
+    </div>   
+    </Wrapper>
+    <Wrapper>
     <div>
+        <Number>
+            <Date>2</Date>
+        </Number>
+        <Description>
+            <Text>Efectivo: $20.000
+            Tarjeta: $70.000
+            Transferencia: $10.000</Text>
+        </Description>
         <div>
-            <h2>2</h2>
+            <h2>Total: $100.000</h2>
         </div>
-        <div>
-            <p>Efectivo: $10.000</p>
-            <p>Tarjeta: $40.000</p>
-            <p>Transferencia: </p>
-        </div>
-        <div>
-            <h2>Total: $50.000</h2>
-        </div>
-    </div>
+    </div>   
+    </Wrapper>
+    <Wrapper>
     <div>
+        <Number>
+            <Date>3</Date>
+        </Number>
+        <Description>
+            <Text>Efectivo: $20.000
+            Tarjeta: $70.000
+            Transferencia: $10.000</Text>
+        </Description>
         <div>
-            <h2>3</h2>
+            <h2>Total: $100.000</h2>
         </div>
+    </div>   
+    </Wrapper>
+    <Wrapper>
+    <div>
+        <Number>
+            <Date>4</Date>
+        </Number>
+        <Description>
+            <Text>Efectivo: $20.000
+            Tarjeta: $70.000
+            Transferencia: $10.000</Text>
+        </Description>
         <div>
-            <p>Efectivo: $20.000</p>
-            <p>Tarjeta: $80.000</p>
-            <p>Transferencia: $6.000</p>
+            <h2>Total: $100.000</h2>
         </div>
-        <div>
-            <h2>Total: $106.000</h2>
-        </div>
+    </div>   
+    </Wrapper>
+    </Container>
+
     </div>
 
-<div>  
-    <h2>Balance: $190.000 </h2>
-            <p>Efectivo: $60.000</p>
-            <p>Tarjeta: $80.000</p>
-            <p>Transferencia: $16.000</p>
-</div>
-    </Container>
+
+
     
   )
 }

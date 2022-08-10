@@ -3,7 +3,8 @@ import styled from "styled-components";
 import {Link} from 'react-router-dom'
 
 const Container = styled.div`
-  height: 60px;
+padding:15px 0px;
+height: 120px;
 `;
 
 const Wrapper = styled.div`
@@ -60,6 +61,8 @@ const Navbar = () => {
         <Link to="/ventas"><MenuItem>Ventas</MenuItem></Link>
           <Link to="/producto/inventario"><MenuItem>Inventario</MenuItem></Link>
           <Link to="/producto/agregar"><MenuItem>Agregar Producto</MenuItem></Link>
+          {/* <a href="http://localhost:3002"><MenuItem>Web</MenuItem></a> */}
+
           <MenuItem>
           </MenuItem>
         </Right>
