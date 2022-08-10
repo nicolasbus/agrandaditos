@@ -1,13 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Search from '../components/Search'
-import DailySales from '../pages/sales/DailySales'
+import Inventory from './products/Inventory'
+import Sales from './sales/Sales'
+
 
 const Home = () => {
   return (
     <div>
-      {/* <Navbar/> */}
-      <Search/>
+      <Inventory/>
     </div>
   )
 }

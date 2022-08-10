@@ -8,7 +8,9 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    // background-image: url("https://i.ibb.co/tb6c9kY/agrandaditos-Back.png");
 `;
+    
 
 const Inventory = () => {
     const [product,setProduct] = useState([])

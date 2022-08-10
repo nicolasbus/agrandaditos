@@ -51,12 +51,13 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-        <Logo src="https://i.ibb.co/9svYwmC/Photo-Room-20220801-104426.jpg" widht="5px"/>
+        <Link to="/producto/inventario"><Logo src="https://i.ibb.co/9svYwmC/Photo-Room-20220801-104426.jpg" widht="5px"/></Link>
+
         </Left>
         <Center>
         </Center>
         <Right>
-          <MenuItem>Ventas</MenuItem>
+        <Link to="/ventas"><MenuItem>Ventas</MenuItem></Link>
           <Link to="/producto/inventario"><MenuItem>Inventario</MenuItem></Link>
           <Link to="/producto/agregar"><MenuItem>Agregar Producto</MenuItem></Link>
           <MenuItem>

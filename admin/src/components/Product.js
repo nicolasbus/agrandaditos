@@ -12,6 +12,15 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+;
+`;
+
+const Ul = styled.ul`
+list-style: none;
+`;
+
+const Li = styled.li`
+margin:10px;
 `;
 const Image = styled.img`
 height: auto;
@@ -19,25 +28,32 @@ width:250px;
 z-index: 2;
 `;
 const Info = styled.div`
-  // opacity: 0;
   width: 100%;
+  flex: 1;
+  padding: 0px 50px;
   height: 100%;
   position: relative;
-  top: 0;
-  left: 0;
   margin:0;
-  // background-color: rgba(0, 0, 0, 0.2);
   z-index: 3;
   display: flex;
   align-items: center;
-  justify-content: center;
-  // transition: all 0.5s ease;
   cursor: pointer;
 `;
 const FilterSize = styled.select`
 margin-left:10px;
 padding:5px;
 `;
+
+const Button = styled.button`
+// width: 40px;
+// height: 40px;
+// border-radius: 50%;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+border-box: 1px solid white;
+margin: 10px;`
 
 const FilterSizeOption = styled.option``;
 
@@ -56,18 +72,18 @@ const Product = ({products}) => {
     <Container>
           <Image src={products.img} width="300px"/>
           <Info>
-        <ul>
-            <li>{products.title}</li>
-            <li>{products.brand}</li>
-            <li>${products.price}</li>
-            <li>{products.color}</li>
+        <Ul>
+            <Li>{products.title}</Li>
+            <Li>{products.brand}</Li>
+            <Li>${products.price}</Li>
+            <Li>{products.color}</Li>
             <FilterSize>{products.size?.map(
               (s,index) => (<FilterSizeOption key={index}>{s}</FilterSizeOption>))}
             </FilterSize>
-            </ul>
+            </Ul>
             </Info>
-            <Link to={`/producto/editar/${products._id}`}><button>Editar</button></Link>
-            <button onClick={()=>{deleteProduct(products._id)}}>Eliminar</button>
+            <Link to={`/producto/editar/${products._id}`}><Button>Editar</Button></Link>
+            <Button onClick={()=>{deleteProduct(products._id)}}>Eliminar</Button>
 
     </Container>
   )

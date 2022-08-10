@@ -9,6 +9,7 @@ import {
   // Redirect,
 } from "react-router-dom"
 import Navbar from './components/Navbar';
+import Sales from './pages/sales/Sales';
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/producto/agregar" element={<NewProduct />} />   
         <Route path="/producto/editar/:_id" element={<UpdateProduct />} />   
         <Route path="/producto/inventario" element={<Inventory />} />   
+        <Route path="/ventas" element={<Sales/>} />   
       </Routes>
     </Router>  
   );
