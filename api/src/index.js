@@ -22,7 +22,10 @@ app.use('/products',require('./Routes/products')) ;
 app.use('/users',require('./Routes/users'));
 app.use('/cart',require('./Routes/cart')) ;
 app.use('/orders',require('./Routes/order'));
+app.use('/daysummary',require('./Routes/daySummary'));
 app.use('/mercadopago',require('./Routes/mercadopago'));
+app.use('/sales',require('./Routes/sales'));
+
 app.use(cors({origin: whiteList}));
 app.use(express.urlencoded({ extended: false }));
 

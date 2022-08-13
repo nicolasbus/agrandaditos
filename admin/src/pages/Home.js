@@ -1,12 +1,10 @@
 import React from 'react'
-import Inventory from './products/Inventory'
-import Sales from './sales/Sales'
-
-
+import DaySummary from '../components/DaySummary'
 const Home = () => {
   return (
     <div>
-      <Inventory/>
+      {/* <Inventory/> */}
+      <DaySummary/>
     </div>
   )
 }

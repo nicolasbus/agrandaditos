@@ -11,6 +11,12 @@ const Product = require('../models/Product')
 //     }
 // })
 
+//FILTER 
+router.get("/",async (req,res)=>{
+  const {texto} = req.params
+  let products = await Product.find({name: new RegExp('^'+texto+'$',"i")})
+  res.json(products)
+})
 
 //GET ALL PRODUCTS
 router.get("/", async (req, res) => {

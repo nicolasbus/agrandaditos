@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -60,32 +60,32 @@ margin: 10px;`
 
 const FilterSizeOption = styled.option``;
 
-const Product = ({products}) => {
+const Sale = ({sales}) => {
 
-  const deleteProduct=(_id)=>{
-    axios.delete(`http://localhost:3000/products/${_id}`)
-    .then(res=>{
-      console.log(res.data)
-      window.location.reload(true);
-  })
-  .catch(err=>{
-    console.log(err)
-  })}
+//   const deleteProduct=(_id)=>{
+//     axios.delete(`http://localhost:3000/products/${_id}`)
+//     .then(res=>{
+//       console.log(res.data)
+//       window.location.reload(true);
+//   })
+//   .catch(err=>{
+//     console.log(err)
+//   })}
   return (
     <Container>
-          <Image src={products.img} width="300px"/>
+          <Image src={sales.img} width="300px"/>
           <Info>
         <Ul>
-            <Li>{products.title}</Li>
-            <Li>{products.brand}</Li>
-            <Li>${products.price}</Li>
-            <Li>{products.color}</Li>
-            <FilterSize>{products.size?.map(
+            <Li>{sales.title}</Li>
+            <Li>{sales.brand}</Li>
+            <Li>${sales.price}</Li>
+            <Li>{sales.color}</Li>
+            <FilterSize>{sales.description?.map(
               (s,index) => (<FilterSizeOption key={index}>{s}</FilterSizeOption>))}
             </FilterSize>
             </Ul>
             </Info>
-            <Link to={`/producto/editar/${products._id}`}><Button>Editar</Button></Link>
+            <Link to={`/producto/editar/${sales._id}`}><Button>Editar</Button></Link>
             {/* <Button onClick={()=>{deleteProduct(products._id)}}>Eliminar</Button> */}
 
     </Container>
@@ -93,7 +93,7 @@ const Product = ({products}) => {
 }
 
 
-export default Product
+export default Sale
 
 
 
