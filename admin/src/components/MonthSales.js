@@ -1,8 +1,3 @@
-//A LA DERECHA DE LA PANTALLA
-//DIA EN GRANDE - AL COSTADO EN TAMANO QUE ENTREN 3 UNO ABAJO DEL OTRO --- EFECTIVO - TARJETA - TRANSFERENCIA
-//ABAJO EL TOTAL
-
-
 import React from 'react'
 import styled from 'styled-components'
 
@@ -40,72 +35,31 @@ const Text = styled.p`
 font-size: 12px;
 `;
 
-const MonthSales = () => {
+const MonthSales = (props) => {
+    const {item} = props
+
   return (
     <div>                
-    <H2>Agosto</H2>
     <Container>
 
         <Wrapper>
     <div>
         <Number>
-            <Date>1</Date>
+            <Date>{item.date}</Date>
         </Number>
         <Description>
-            <Text>Efectivo: $20.000
-            Tarjeta: $70.000
-            Transferencia: $10.000</Text>
+            <Text>Efectivo: {item.cash} <br/>
+            Tarjeta: {item.card} <br/>
+            Transferencia: {item.transfer} <br/>
+            Caja: {item.cashRegister}
+            </Text>
         </Description>
         <div>
-            <h2>Total: $100.000</h2>
+            <h2>Total: {item.total}</h2>
         </div>
     </div>   
     </Wrapper>
-    <Wrapper>
-    <div>
-        <Number>
-            <Date>2</Date>
-        </Number>
-        <Description>
-            <Text>Efectivo: $20.000
-            Tarjeta: $70.000
-            Transferencia: $10.000</Text>
-        </Description>
-        <div>
-            <h2>Total: $100.000</h2>
-        </div>
-    </div>   
-    </Wrapper>
-    <Wrapper>
-    <div>
-        <Number>
-            <Date>3</Date>
-        </Number>
-        <Description>
-            <Text>Efectivo: $20.000
-            Tarjeta: $70.000
-            Transferencia: $10.000</Text>
-        </Description>
-        <div>
-            <h2>Total: $100.000</h2>
-        </div>
-    </div>   
-    </Wrapper>
-    <Wrapper>
-    <div>
-        <Number>
-            <Date>4</Date>
-        </Number>
-        <Description>
-            <Text>Efectivo: $20.000
-            Tarjeta: $70.000
-            Transferencia: $10.000</Text>
-        </Description>
-        <div>
-            <h2>Total: $100.000</h2>
-        </div>
-    </div>   
-    </Wrapper>
+
     </Container>
 
     </div>
@@ -117,3 +71,7 @@ const MonthSales = () => {
 }
 
 export default MonthSales
+
+
+
+

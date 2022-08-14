@@ -60,7 +60,8 @@ margin: 10px;`
 
 const FilterSizeOption = styled.option``;
 
-const Sale = ({sales}) => {
+const Sale = (props) => {
+  const {item} = props
 
 //   const deleteProduct=(_id)=>{
 //     axios.delete(`http://localhost:3000/products/${_id}`)
@@ -73,19 +74,17 @@ const Sale = ({sales}) => {
 //   })}
   return (
     <Container>
-          <Image src={sales.img} width="300px"/>
-          <Info>
+
         <Ul>
-            <Li>{sales.title}</Li>
-            <Li>{sales.brand}</Li>
-            <Li>${sales.price}</Li>
-            <Li>{sales.color}</Li>
-            <FilterSize>{sales.description?.map(
+            {/* <FilterSize>{item.paymentMethod?.map(
               (s,index) => (<FilterSizeOption key={index}>{s}</FilterSizeOption>))}
-            </FilterSize>
+            </FilterSize> */}
+          <Li>{item.date} </Li>
+          <Li>${item.total} </Li>
+          <Li>{item.paymentMethod}</Li>
+            <Li>{item.description}</Li>
             </Ul>
-            </Info>
-            <Link to={`/producto/editar/${sales._id}`}><Button>Editar</Button></Link>
+            {/* <Link to={`/producto/editar/${item._id}`}><Button>Editar</Button></Link> */}
             {/* <Button onClick={()=>{deleteProduct(products._id)}}>Eliminar</Button> */}
 
     </Container>

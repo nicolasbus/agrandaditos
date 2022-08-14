@@ -1,12 +1,36 @@
 import React,{useState} from 'react'
 import styled from "styled-components";
 import axios from "axios";
+import MonthSalesMap from "./MonthSalesMap"
+
+const Container = styled.div`
+display:flex;
+`;
+const Wrapper = styled.div`
+  width: 25%;
+  padding: 0px 10px;
+  background-color: white; 
+
+`;
+const PaymentMethod = styled.div`
+margin:10px;
+display:flex;
+`;
+const Label = styled.label`
+margin:0px;
+`;
+const Date = styled.div`
+margin:25px`;
+const Info = styled.div`
+flex:1;
+margin:12px;
+`;
 
 const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 10px 0;
-  padding: 10px;
+  /* flex: 1; */
+  /* min-width: 40%; */
+  margin: 0px 20px;
+  padding: 0px 8px; 
 `;
 const Button = styled.button`
   width: 40%;
@@ -72,33 +96,41 @@ const body1 =
   
       }
   return (
-    <div>           
+    <Container>           
+      <Wrapper>
          <h2>Cierre del dia</h2>
-         <form>
-    <label>Fecha</label>
-    <Input type="date" value={date} onChange={(e)=>{setDate(e.target.value)}}/>
 
-    <label>Efectivo $</label>
+         <form>
+          <Date>
+    <Label>Fecha</Label>
+    <Input type="date" value={date} onChange={(e)=>{setDate(e.target.value)}}/><br/>
+    </Date>
+    <PaymentMethod>
+    <Label>Efectivo</Label>
     <Input type="number"  value={cash} onChange={(e)=>{setCash(e.target.value)}}/>
     
-    <label>Tarjeta $</label>
+    <Label>Tarjeta</Label>
     <Input type="number"  value={card} onChange={(e)=>{setCard(e.target.value)}}/>
     
-    <label>Transferencia $</label>
+    <Label>Transferencia</Label>
     <Input type="number"  value={transfer} onChange={(e)=>{setTransfer(e.target.value)}}/>
+    </PaymentMethod>
+    <Info>
+    <Label>Total</Label>
+    <Input type="number" value={total} /><br/>
     
-    <label>Total  $</label>
-    <Input type="number" value={total} />
-    
-    <label>Caja chica $</label>
-    <Input type="number" value={cashRegister} onChange={(e)=>{setCashRegister(e.target.value)}}/>
+    <Label>Caja chica</Label>
+    <Input type="number" value={cashRegister} onChange={(e)=>{setCashRegister(e.target.value)}}/><br/>
    
-    <label>Novedades</label>
-    <Input type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}}/>
-
+    <Label>Novedades</Label>
+    <Input type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}}/><br/>
+    </Info>
     <Button onClick={()=>handleClick()}>Cierre</Button>
     </form>
-</div>
+    </Wrapper>
+
+  
+</Container>
   )
 }
 

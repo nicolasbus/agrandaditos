@@ -10,6 +10,7 @@ import {
 } from "react-router-dom"
 import Navbar from './components/Navbar';
 import Sales from './pages/sales/Sales';
+import DaySummary from './components/DaySummary';
 
 
 
@@ -22,7 +23,9 @@ function App() {
         <Route path="/producto/agregar" element={<NewProduct />} />   
         <Route path="/producto/editar/:_id" element={<UpdateProduct />} />   
         <Route path="/producto/inventario" element={<Inventory />} />   
-        <Route path="/ventas" element={<Sales/>} />   
+        <Route path="/ventas" element={<Sales/>} />  
+        <Route path="/cierre" element={<DaySummary/>} />   
+ 
       </Routes>
     </Router>  
   );

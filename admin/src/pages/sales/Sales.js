@@ -1,12 +1,12 @@
 import React from 'react'
 import DailySales from '../../components/DailySales'
-import MonthSales from '../../components/MonthSales'
+import MonthSalesMap from '../../components/MonthSalesMap'
 
 const Sales = () => {
   return (
     <div>
         <DailySales/>
-        <MonthSales/>
+        <MonthSalesMap/>
     </div>
   )
 }
