@@ -1,10 +1,8 @@
 import React,{useState} from 'react'
 import styled from "styled-components";
 import axios from "axios";
-import MonthSalesMap from "./MonthSalesMap"
 
 const Container = styled.div`
-display:flex;
 `;
 const Wrapper = styled.div`
   width: 25%;
@@ -13,24 +11,25 @@ const Wrapper = styled.div`
 
 `;
 const PaymentMethod = styled.div`
-margin:10px;
 display:flex;
+margin:10px;
 `;
 const Label = styled.label`
-margin:0px;
+/* padding:0px 100px; */
+/* display:flex; */
+/* flex:1; */
+margin-right: 23px;;
 `;
 const Date = styled.div`
 margin:25px`;
 const Info = styled.div`
-flex:1;
-margin:12px;
+/* flex:1; */
+/* display:flex; */
+padding:0px 20px ;
+
 `;
 
 const Input = styled.input`
-  /* flex: 1; */
-  /* min-width: 40%; */
-  margin: 0px 20px;
-  padding: 0px 8px; 
 `;
 const Button = styled.button`
   width: 40%;
@@ -116,14 +115,18 @@ const body1 =
     <Input type="number"  value={transfer} onChange={(e)=>{setTransfer(e.target.value)}}/>
     </PaymentMethod>
     <Info>
+    <div>
     <Label>Total</Label>
-    <Input type="number" value={total} /><br/>
-    
+    <Input type="number" value={total} />
+    </div>
+    <div>
     <Label>Caja chica</Label>
-    <Input type="number" value={cashRegister} onChange={(e)=>{setCashRegister(e.target.value)}}/><br/>
-   
+    <Input type="number" value={cashRegister} onChange={(e)=>{setCashRegister(e.target.value)}}/>
+    </div>
+    <div>
     <Label>Novedades</Label>
-    <Input type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}}/><br/>
+    <Input type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}}/>
+    </div>
     </Info>
     <Button onClick={()=>handleClick()}>Cierre</Button>
     </form>

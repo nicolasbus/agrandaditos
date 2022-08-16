@@ -1,15 +1,12 @@
 import React from 'react'
-import DaySummary from '../components/DaySummary'
-import SalesMap from '../components/SalesMap'
-import SearchComponent from '../components/SearchComponent'
+import Inventory from './products/Inventory'
+import DailySales from '../components/DailySales'
 const Home = () => {
   return (
     <div>
-      {/* <Inventory/> */}
-      {/* <SalesMap/>
-      <DaySummary/> */}
-      <input type="search"></input>
-<SearchComponent/>
+      <DailySales/>
+      <br/> <br/> <br/>
+      <Inventory/>
     </div>
   )
 }

@@ -15,23 +15,12 @@ const Div = styled.div`
 display:flex;
 `;
 const Label = styled.label`
-position:relative;
-top:50px;
-padding:10px 5px 10px;
 margin:10px;
 
 `;
 const Input = styled.input`
-flex:1;
-margin:10px;
-// display:inline-block;
-position:relative;
-top:50px;
-padding:10px 5px 10px;
-// height:30px;
-display:flex;
-z-index:0px;
-height:10px;
+height:25px;
+width:45px;
 `;
 const Inventory = () => {
     const [product,setProduct] = useState([])
@@ -51,7 +40,7 @@ const Inventory = () => {
         })
     },[])
     const results = !search ? product : product.filter((dato)=> dato.size.toString().toLowerCase().includes(search.toLocaleLowerCase()))
-
+    // && !search ? product : product.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
 
     const productList = results.map((products,index) => {
         return(
@@ -65,35 +54,13 @@ const Inventory = () => {
   return (
     <div>
         <Div>
-        <Label>Talle</Label>
-    <Input value={search} onChange={searcher}c type="text" />
-    </Div>
-    <Container>
-        {productList}
-        
-        {/* <table>
-            <thead>
-                <tr>
-                    <th>
-                        <th>NAME</th>
-                        <th>USER NAME</th>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                { results.map( (products,index) =>(
-                    <tr key={index}>
-                        <td>{products.title}</td>
-                        <td>{products.price}</td>
-                        <img src={products.img}/>
-                    </tr>
-                ))}
-            </tbody>
-        </table> */}
-
-    </Container>
+             <Label>Talle</Label>
+             <Input value={search} onChange={searcher}c type="text" />
+         </Div>
+         <Container>
+              {productList}
+         </Container>
     </div>
   )
 }
-//NUEVAACTUALIZACION
 export default Inventory

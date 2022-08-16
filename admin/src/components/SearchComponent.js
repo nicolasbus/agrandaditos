@@ -29,7 +29,7 @@ const searcher = (e) =>{
     console.log("hola mundo")
   return (
     <div>
-        <input value={search} onChange={searcher} type="text" placeholder="search" />
+        <input value={search} onChange={searcher} type="text"  />
         <table>
             <thead>
                 <tr>

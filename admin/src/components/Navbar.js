@@ -52,7 +52,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-        <Link to="/producto/inventario"><Logo src="https://i.ibb.co/9svYwmC/Photo-Room-20220801-104426.jpg" widht="5px"/></Link>
+        <Link to="/"><Logo src="https://i.ibb.co/9svYwmC/Photo-Room-20220801-104426.jpg" widht="5px"/></Link>
 
         </Left>
         <Center>
