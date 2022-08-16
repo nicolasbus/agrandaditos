@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 
 const Container = styled.div`
 font-family: Roboto, sans-serif;
@@ -38,6 +39,14 @@ font-size: 12px;
 const MonthSales = (props) => {
     const {item} = props
 
+
+//     function obtenerFecha(item){
+//       var fecha = moment(item.date);
+// {      console.log("Fecha original:" + item.date);
+//       console.log("Fecha formateada es: " + fecha.format("DD/MM/YYYY")
+//       )
+//     };
+//     }
   return (
     <div>                
     <Container>
@@ -45,7 +54,9 @@ const MonthSales = (props) => {
         <Wrapper>
     <div>
         <Number>
-            <Date>{item.date}</Date>
+            <Date>
+                {/* {obtenerFecha(item)} */}
+                {item.date}</Date>
         </Number>
         <Description>
             <Text>Efectivo: {item.cash} <br/>
